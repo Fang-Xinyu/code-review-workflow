@@ -9,7 +9,7 @@ FILES = {"app.py", "cli.py", "schemas.py", "reporting.py", "Dockerfile.test", ".
          "README.md", "Design.md", "VERIFICATION.md"}
 DIRECTORIES = {"agents", "workflow", "validation", "review_agent", "examples", "tests", "scripts"}
 FIGURES = {f"docs/figures/{name}.{ext}" for name in
-           ("architecture", "workflow", "collaboration", "snapshots") for ext in ("png", "svg")}
+           ("architecture", "workflow", "collaboration", "snapshots", "fixer_internal") for ext in ("png", "svg")} | {"docs/figures/workflow_full.mmd"}
 
 
 def package(output):
