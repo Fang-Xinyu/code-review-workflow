@@ -1,0 +1,6 @@
+*
+!Dockerfile.test
+!validation/
+!validation/collector.py
+!validation/container_entry.py
+!validation/pytest.lock

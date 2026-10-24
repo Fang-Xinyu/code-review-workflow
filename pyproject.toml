@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codeflow-course"
+version = "1.0.0"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.7,<3", "langgraph>=0.2,<2", "langchain-openai>=0.2,<2", "streamlit>=1.50,<2", "ruff>=0.6,<1", "pytest>=8,<9"]
+
+[tool.setuptools]
+py-modules = ["cli", "app", "schemas", "reporting"]
+
+[tool.setuptools.packages.find]
+include = ["agents*", "workflow*", "validation*", "review_agent*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+markers = ["container: requires prepared Docker image"]
+
+[tool.ruff]
+extend-exclude = ["review_agent", "examples", "runs", "outputs"]
+
+[tool.ruff.lint]
+select = ["F", "E9"]
